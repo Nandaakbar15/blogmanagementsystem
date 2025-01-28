@@ -38,5 +38,12 @@ Route::prefix('post')->group(function() {
 - Open phpmyadmin
 - Create a new database
 - Import the SQL from folder database/db_blog.sql
+- Create a .env file by entering this command :
+cp .env.example .env
+- Run the project by enter php artisan serve
+
+## Live Demo
+The app or the website has been deployed and accessible at the following link:
+http://myblog.biz.id/
 
 
