@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', function() {
+    return redirect()->route('datapost');
 });
 
 Route::get('/welcome', 'App\Http\Controllers\WelcomeController@welcome');
@@ -16,7 +20,7 @@ Route::post('/form', 'App\Http\Controllers\FormController@checkForm');
 
 // route mengelola post
 Route::prefix('post')->group(function() {
-    Route::get('/datapost', 'App\Http\Controllers\PostController@index');
+    Route::get('/datapost', 'App\Http\Controllers\PostController@index')->name('datapost');
     Route::get('/viewformtambahpost', 'App\Http\Controllers\PostController@create');
     Route::post('/tambahpost', 'App\Http\Controllers\PostController@store');
     Route::get('/viewubahpost/{post}', 'App\Http\Controllers\PostController@edit');
